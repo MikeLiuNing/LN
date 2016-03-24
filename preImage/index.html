@@ -4,5 +4,63 @@
         <meta charset="utf-8"/>
         <meta cotent="width=device-width,user-scalable=no" name="viewport"/>
     </head>
-    <body></body>
+    <body>
+        <div>
+            <img class="img" id="img1" />
+        </div>
+        <script type="text/javascript">
+            var img1 = document.getElementById('img1');
+            var images = new Array();
+
+            function preLoadimage () {
+                for (i = 0; i < preLoadimage.arguments.length; i++) {
+                    images[i] = new Image();
+                    images[i].src = preLoadimage.arguments[i];
+                }
+                /*
+                var img = new Image();
+                img.src = url;
+                img.onload = function () {
+                    img1.src = img.src;
+                }
+                */
+            }
+
+            function addLoadEvent (func) {
+                var oldonload = window.onload;
+                if (typeof window.onload != 'function ') {
+                    window.onload = func;
+                } else {
+                    window.onload = function () {
+                        oldonload();
+                        func();
+                    }
+                }
+            }
+
+            /*
+            addLoadEvent(preLoadimage ('http://7xk3aj.com1.z0.glb.clouddn.com/wyethcourse/ac9fdc5de7294ac1fd123f3dff444137.jpg',
+                'http://7xk3aj.com1.z0.glb.clouddn.com/wyethcourse/80fdb2d6b691086b9deb601c3cc4bf63.jpg',
+                'http://7xk3aj.com1.z0.glb.clouddn.com/wyethcourse/eca9618076c0e5e98c7d5730200af4be.jpg'
+                )); 
+            */
+        </script>
+        <script type="text/javascript">
+            //ajax 加载
+            window.onload = function () {
+                setTimeout(function () {
+                    var xhr = new XMLHttpRequest(); 
+                    xhr.open('GET', 'http://7xji84.com1.z0.glb.clouddn.com/wyethad/css/reset.css');
+                    xhr.send('');
+                    xhr = new XMLHttpRequest();
+                    xhr.open('GET', 'http://7xji84.com1.z0.glb.clouddn.com/wyethad/js/jquery-2.1.4.min.js');
+                    xhr.send('success');
+
+                    new Image().src = "http://7xk3aj.com1.z0.glb.clouddn.com/wyethcourse/eca9618076c0e5e98c7d5730200af4be.jpg";
+                    new Image().src = "http://7xk3aj.com1.z0.glb.clouddn.com/wyethcourse/ac9fdc5de7294ac1fd123f3dff444137.jpg";
+                    new Image().src = "http://7xk3aj.com1.z0.glb.clouddn.com/wyethcourse/80fdb2d6b691086b9deb601c3cc4bf63.jpg";
+                }, 100)
+            }
+        </script>
+    </body>
 </html>
