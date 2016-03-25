@@ -1,0 +1,49 @@
+<!doctype <!DOCTYPE html>
+<html>
+<head>
+    <!--
+        今天去面试，考官问到这样的问题，无奈我用的动画太少了，基本就是现用现查深感惭愧，回来做了一次，发现动画还是css3的重要内容，根本不是我以前那样一知半解就可以的，找工作各种不顺利，只好虐自己，多写代码了
+    -->
+    <title>抛硬币</title>
+    <style type="text/css">
+        #wapper {
+            position: relative;
+            -webkit-animation:top 2.5s ease-in;
+        }
+        #coin {
+            width:50px; 
+            height:50px; 
+            position:relative; 
+            left:0px; 
+            top:0px; 
+            -webkit-animation:left 2.5s linear;
+        }
+        @keyframes top {
+            0% {
+                top:0px;
+            }
+            100% {
+                top:500px;
+            }
+        }
+        @keyframes left {
+            0% {
+                left:0px;
+                transform: rotate(0deg);
+            }
+            50%{
+                transform: rotate(360deg);
+            }
+            100% {
+                left:500px;
+                transform: rotate(720deg);
+            }
+        } 
+    </style>
+</head>
+<body>
+    <div id="wapper">
+        <img id="coin" src="coin.jpg">
+    </div>
+</body>
+</html>
