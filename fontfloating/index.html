@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--利用阴影可以比较好的实现文字的悬浮效果-->
+    <title>字体悬浮感</title>
+    <style type="text/css">
+        .wrapper { 
+            width: 300px;
+            height: 100px;
+            position: absolute; 
+            top: 0; 
+            left: 0;
+            background-color: #000; 
+        }
+        .p1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-shadow: 0 1px 0 #eee;
+            font-size: 16px;
+            color: #FFF;
+        }
+        .p2 {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            text-shadow: 0 1px 0 #eee;
+            font-size: 18px;
+            font-weight: 2px;
+            color: #FFF;
+        }
+        .p3 {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            text-shadow: 0 1px 0 #eee;
+            font-size: 20px;
+            color: #FFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <P class="p1">测试一 这是一段悬浮字体</P>
+        <P class="p2">测试二 这是一段悬浮字体</P>
+        <P class="p3">测试三 这是一段悬浮字体</P>
+    </div>
+</body>
+</html>
