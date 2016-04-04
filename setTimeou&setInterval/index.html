@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>setTimeout和setInterval的区别</title>
+</head>
+<body>
+    <script type="text/javascript">
+        setTimeout(function () {
+            console.log('wait one minutes');
+        }, 1000);
+        (function () {
+            var i = 0;
+            var date = new Date();
+            var my_interval = setInterval(function () {
+                i ++; 
+                console.log(date.getMinutes() + ':' + date.getSeconds() + ':' + date.getMilliseconds()+ '\n');
+                if (i > 10) {
+                    clearInterval(my_interval);
+                }
+            }, 1000);
+
+        })();
+    </script>
+</body>
+</html>
