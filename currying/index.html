@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--今天在地铁上看了函数柯里化，有所悟，实际操作一下-->
+    <title>函数柯里化</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var currying = function (fun, times, wait) {
+            return function (argument) {
+                setTimeout(function() {
+                    for (var i = 0; i < times; i++) {
+                        fun (argument);
+                    }
+                },wait);
+            }
+        }
+        var myAlert = currying(alert, 3, 2000);
+        myAlert('hello');
+    </script>
+</body>
+</html>
